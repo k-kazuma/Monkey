@@ -1,0 +1,193 @@
+$cwhite: white;
+
+* {
+    margin: 0;
+    color: $cwhite;
+}
+
+html {
+    height: 100%;
+    margin: 0 auto;
+}
+
+a:-webkit-any-link {
+    // color: $cwhite;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url(../public/topimg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
+    & .header-title {
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 2.2rem;
+        font-weight: 700;
+        padding-top: 150px;
+        color: $cwhite;
+        opacity: 0;
+        // transition: all 1.0s;
+
+        &.invew {
+            opacity: 1;
+            & .chara {
+                display: inline-block;
+                animation-name: animate-charas;
+                animation-duration: 1s;
+                animation-timing-function: ease;
+                animation-fill-mode: both;
+
+                @for $i from 1 through 11 {
+                    &:nth-child(#{$i}) {
+                            animation-delay: $i * 0.06s;
+                        }
+                    }
+            }
+        }
+    }
+
+    & .header-nav > ul {
+        padding: 130px 0 0;
+        margin: 0 auto;
+        
+        & .menu-item {
+            position: relative;
+            list-style: none;
+            width: 200px;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 25px;
+            font-size: 1.7rem;
+            text-decoration: none;
+            color: $cwhite;
+
+            &:nth-child(1) {
+                padding-top: 0;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                bottom: 0;
+                left: 0;
+                background-color: $cwhite;
+            }
+        }
+    }
+
+    .header-nav.invew {
+
+        & .menu-item {
+            animation-name: animate-charas;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}){
+                    animation-delay: $i * 0.12s + 0.5s;
+                }
+            }
+        }
+    }
+}
+
+@keyframes animate-charas{
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.container {
+    width: 100%;
+    padding-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.559);
+
+    & .title {
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 2.2rem;
+        font-weight: 700;
+        padding-top: 60px;
+        color: $cwhite;
+    }
+}
+
+// 下層ページ用
+
+.text-containar {
+    padding-top: 100px;
+
+    & .sub-title {
+        font-size: 1.3rem;
+
+    }
+    & .sub-text {
+        width: 90vw;
+        margin: 0 auto;
+        padding-top: 40px;
+        line-height: 1.5rem;
+    }
+}
+
+.profile-containar {
+    width: 90%;
+    padding-top: 70px;
+    margin: 0 auto;
+
+    & table {
+        width: 100%;
+        margin-top: 50px;
+        border-bottom: 1px solid white;
+    }
+
+    & .profile-name {
+        text-align: left;
+    }
+
+    & .profile-text {
+        text-align: right;
+    }
+}
+
+// メニュー用
+
+.menu-containar {
+    display: flex;
+}
+
+.menu-nav {
+    background-color: rgba(247, 246, 242, 0.837);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.8rem;
+
+    & .menu-item {
+        width: 20%;
+        padding-top: 20px;
+        border: 1px solid rgba(6, 6, 6, 0.556);
+        list-style: none;
+        text-align: center;
+
+        & > a {
+            color: black;
+        }
+    }
+}
+
