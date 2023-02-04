@@ -15,7 +15,7 @@ function Production() {
                   <>
                     <div className="text-containar">
                     <h2 className="sub-title" key={key}>{title.productionNumber} → {title.productionTitle}</h2>
-                    <p className="sub-text" key={key}>
+                    <p className="sub-text">
                         {title.productionText}
                     </p>
                     </div>

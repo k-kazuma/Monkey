@@ -7,7 +7,6 @@ import {useState, useEffect} from 'react';
 function Menu() {
 
   const [classAdd, addClass] = useState(false);
-  console.log(classAdd);
 
   const classToggle = () => {
     addClass(!classAdd)
