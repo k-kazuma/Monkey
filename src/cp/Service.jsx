@@ -10,9 +10,9 @@ const Service = () => {
         <div className="container">
           <h1 className="title">Service</h1>
           {serviceDate.map((text, key) => {
-            return <div className='text-containar'>
-                      <h2 className="sub-title" key={key}>{text.serviceTitle}</h2>
-                      <p className="sub-text" key={key}>{text.serviceText}</p>
+            return <div className='text-containar' key={key}>
+                      <h2 className="sub-title">{text.serviceTitle}</h2>
+                      <p className="sub-text">{text.serviceText}</p>
                     </div> 
           })}
         </div>

@@ -12,10 +12,12 @@ function Profile() {
               <div className="profile-containar">
                 {profileDate.map((list, key) => {
                   return (
-                    <table className='table'>
-                      <tr>
-                        <th key={key} className='profile-name'>{list.profileList}</th><td key={key} className='profile-text'>{list.profileItem}</td>
-                      </tr>
+                    <table className='table' key={key}>
+                      <tbody>
+                        <tr>
+                          <th className='profile-name'>{list.profileList}</th><td className='profile-text'>{list.profileItem}</td>
+                        </tr>
+                      </tbody>
                     </table>
                   )
                 })}
