@@ -1,17 +1,9 @@
 import React from 'react'
 import Menu from './Menu'
 import { productionDate } from './Date';
-import {Link} from "react-router-dom";
 
 
 function Production() {
-
-  const productionNumber = productionDate.map((title, key) => {
-    return (
-      <span key={key}>{title.productionNumber}</span>
-    )
-  })
-
 
   return (
     <>

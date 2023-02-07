@@ -1,20 +1,13 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import {useState, useEffect} from 'react';
 
 
 
 function Menu() {
 
-  const [classAdd, addClass] = useState(false);
-
-  const classToggle = () => {
-    addClass(!classAdd)
-  }
-
   return (
     <div>
-        <div className={`menu-nav ${classAdd ? "invew" : ""}`}>
+        <div className={`menu-nav`}>
             <ul className="menu-containar">
                 <li className="menu-item">
                   <Link to="/">Top</Link>

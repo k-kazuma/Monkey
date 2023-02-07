@@ -5,8 +5,8 @@ import Service from './cp/Service';
 import Production from './cp/Production';
 import Profile from './cp/Profile';
 import Contact from './cp/Contact';
-import React, { useState, useRef } from "react";
-import { v4 as uuidv4 } from "uuid";
+// import React, { useState, useRef } from "react";
+// import { v4 as uuidv4 } from "uuid";
 import {
   BrowserRouter as Router,
   Routes,
