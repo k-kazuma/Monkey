@@ -10,6 +10,11 @@ html {
     margin: 0 auto;
 }
 
+input,textarea {
+    color: black;
+    display: block
+}
+
 a:-webkit-any-link {
     // color: $cwhite;
     cursor: pointer;

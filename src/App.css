@@ -8,6 +8,10 @@ html {
   margin: 0 auto;
 }
 
+input, textarea {
+  color: black;
+}
+
 a:-webkit-any-link {
   cursor: pointer;
   text-decoration: none;
@@ -210,6 +214,10 @@ a:-webkit-any-link {
 }
 .profile-containar .profile-text {
   text-align: right;
+}
+
+.formInput {
+  display: block;
 }
 
 .menu-containar {

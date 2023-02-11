@@ -1,5 +1,6 @@
 
 
+
     export const serviceDate = [
         {
             serviceTitle: '分かりやすさを重視したデザイン設計',
@@ -63,5 +64,28 @@
         {
             profileList:'スキル',
             profileItem:'HTML・CSS/JavaScript(jQety/react)'
+        },
+    ]
+
+    export const contactTitle = [
+        {
+            name: '会社名 / 屋号',
+            id:'f1',
+        },
+        {
+            name: '氏名',
+            id:'f2',  
+        },
+        {
+            name: 'フリガナ',
+            id:'f3',  
+        },
+        {
+            name: '電話番号',
+            id:'f4',  
+        },
+        {
+            name: 'メールアドレス',
+            id:'f5',  
         },
     ]
