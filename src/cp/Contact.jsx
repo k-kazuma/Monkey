@@ -3,11 +3,6 @@ import Menu from './Menu'
 import { useState } from 'react'
 import {init, send} from '@emailjs/browser'
 
-
-// const sendMail = () => {
-
-// }
-
 function Contact() {
 
   const [company, setCompany] = useState('')
