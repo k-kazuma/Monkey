@@ -170,6 +170,35 @@ a:-webkit-any-link {
     }
 }
 
+// 問い合わせフォーム
+
+.formContainar {
+    margin: 30px auto 0;
+    max-width: 72%;
+
+    & .formField {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-bottom: 15px;
+
+        & .formInput {
+            padding-top: 10px;
+            border-radius: 7px;
+        }
+
+        & .formArea {
+            border-radius: 7px;
+        }
+    }
+}
+
+.submitButton {
+    color: black;
+}
+
+
+
 // メニュー用
 
 .menu-containar {
