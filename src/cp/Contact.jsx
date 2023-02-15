@@ -1,13 +1,23 @@
 import React from 'react'
 import Menu from './Menu'
 import { useState } from 'react'
-// import {init, send} from '@emailjs/browser'
+import { send } from '@emailjs/browser'
 
 function Contact() {
 
   const initialValues = {company: "", username: "", username2: "", phon: "", mail: "", massege: ""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const formItems = {
+    company: formValues.company,
+    user_name: formValues.username,
+    user_name2: formValues.username2,
+    user_phon: formValues.phon,
+    user_email: formValues.mail,
+    message: formValues.massege,
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,10 +26,27 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmit(true);
+    setFormErrors(validate(formValues));
+
+
+    if(Object.keys(formErrors).length === 0 && isSubmit){
+      send('service_5f876ur', 'template_pgncwcg', formItems, 'FTYyGYT9tu65HVkjk')
+        .then((result) => {
+          console.log(result.text);
+        },(error) => {
+          console.log(error.text)
+        })
+      console.log('Hello')
+    }else{
+      console.log('Bye')
+    }
+
+  }
 
     // バリデーションチェック
 
-    const validate = (values) => {
+  const validate = (values) => {
       const errors = {};
       const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/; 
       if(!values.company){
@@ -41,21 +68,11 @@ function Contact() {
       }else if(!regex.test(values.mail)){
         errors.mail = 'メールアドレスを正しく入力して下さい'
       }
-      if(!values.massege){
-        errors.massege ='問い合わせ内容を入力してください。';
+      if(!values.message){
+        errors.message ='問い合わせ内容を入力してください。';
       }
       return errors;
-    }
-
-    setFormErrors(validate(formValues));
-
   }
-
-  // console.log(formValues)
-
-
-
-
 
   return (
     <>
@@ -95,6 +112,9 @@ function Contact() {
                   </div>
                   <p className='errorMsg'>{formErrors.massege}</p>
                   <button className='submitButton'>送信</button>
+                  {Object.keys(formErrors).length === 0 && isSubmit && (
+                    <div className='messageOk'>ログインに成功しました</div>
+                  )}
                 </form>
               </div>
           </div>

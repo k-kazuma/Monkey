@@ -189,7 +189,7 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-bottom: 15px;
+  margin-top: 20px;
 }
 .formContainar .formField .formInput {
   padding-top: 10px;
@@ -198,8 +198,13 @@ a:-webkit-any-link {
 .formContainar .formField .formArea {
   border-radius: 7px;
 }
+.formContainar p {
+  color: rgb(234, 147, 94);
+}
 
 .submitButton {
+  margin-top: 10px;
+  width: 100%;
   color: black;
 }
 
