@@ -33,7 +33,7 @@ function Contact() {
     if(Object.keys(formErrors).length === 0 && isSubmit){
       send('service_5f876ur', 'template_pgncwcg', formItems, 'FTYyGYT9tu65HVkjk')
         .then((result) => {
-          console.log(result.text);
+          console.log(result.text)
         },(error) => {
           console.log(error.text)
         })
